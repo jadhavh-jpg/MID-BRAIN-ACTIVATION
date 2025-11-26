@@ -89,8 +89,50 @@
     .video-wrap{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
     .iframe-holder{flex:1 1 560px;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(10,10,10,0.06)}
     .iframe-holder iframe{width:100%;height:100%;min-height:280px;border:0;display:block}
-    .benefits{flex:0 0 320px;padding:18px;border-radius:12px;background:linear-gradient(180deg,#ffffff,#fbfff9);border:1px solid #f3f6f4}
-    .benefits h3{margin-top:0;color:var(--accent-2)}
+   /* English Benefits — FIXED, NO CONFLICT */
+.benefits-en {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.benefits-en-title {
+  grid-column: 1 / -1;
+  font-size: 22px;
+  font-weight: 900;
+  margin: 0 0 12px 0;
+  color: #0f172a;
+}
+
+.benefits-en-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fff8ef 100%);
+  padding: 18px;
+  border-radius: 14px;
+  border-left: 5px solid #d4a536;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+  transition: 0.25s ease;
+  min-height: 130px;
+}
+
+.benefits-en-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+.benefits-en-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.benefits-en-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #374151;
+}
 
     .meta{margin-top:12px;color:var(--muted);font-size:14px;text-align:center}
     footer{padding:18px 6px;color:var(--muted);font-size:13px;text-align:center}
@@ -187,20 +229,30 @@
             <iframe src="https://www.youtube.com/embed/ckc-3GoDzC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
 
-          <div class="benefits">
-            <h3 style="font-size:22px;font-weight:900;color:var(--accent-2);margin-top:0">Key Benefits (in English)</h3>
-            <p>Our Mid Brain Activation demo is designed to rapidly enhance cognitive and emotional abilities in children aged 5–15. The technique helps develop natural mental skills through gentle and fun activities.</p>
-            <ul>
-              <li><strong>Improved Concentration:</strong> Children can focus for longer periods during study or activities.</li>
-              <li><strong>Enhanced Memory:</strong> Boosts short-term and long-term memory recall.</li>
-              <li><strong>Faster Learning:</strong> Helps grasp and retain new concepts more quickly.</li>
-              <li><strong>Heightened Observation:</strong> Improves attention to detail and sensory perception.</li>
-              <li><strong>Confidence & Self-esteem:</strong> Success experiences build confidence and reduce performance anxiety.</li>
-              <li><strong>Better Academic Performance:</strong> Focus, memory and recall improvements often reflect in school results.</li>
-              <li><strong>Emotional Balance:</strong> Calmer responses to stress and healthier emotional regulation.</li>
-              <li><strong>Creativity & Problem Solving:</strong> Encourages creative thinking and faster mental association.</li>
-            </ul>
-          </div>
+         <section class="benefits" aria-labelledby="benefits-heading">
+  <h2 id="benefits-heading" class="benefits-title">Key Benefits</h2>
+
+  <div class="benefit-card">
+    <h3>तेज़ ध्यान और फोकस</h3>
+    <p>Blindfold practice से ध्यान और short-term memory में सुधार होता है — पढ़ाई और exams में असर दिखता है।</p>
+  </div>
+
+  <div class="benefit-card">
+    <h3>Confidence में वृद्धि</h3>
+    <p>बच्चों का आत्मविश्वास बढ़ता है — stage presence और concentration दोनों में निखार आता है।</p>
+  </div>
+
+  <div class="benefit-card">
+    <h3>Quick Results</h3>
+    <p>छोटे sessions में measurable improvements — parents ने तुरन्त बदलाव बताया है।</p>
+  </div>
+
+  <div class="benefit-card">
+    <h3>Scientifically Designed</h3>
+    <p>हमारा अभ्यास structured और tested है — practical steps + home follow-ups provide long-term gains.</p>
+  </div>
+</section>
+
         </div>
       </div>
 
@@ -284,6 +336,7 @@ document.getElementById('closeForm').addEventListener('click', function(){
   </script>
 </body>
 </html>
+
 
 
 
