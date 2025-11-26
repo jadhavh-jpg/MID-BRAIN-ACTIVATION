@@ -205,14 +205,60 @@
         </div>
       </div>
 
-      <!-- REGISTER -->
-      <div id="register" style="text-align:center;padding:18px">
-        <h3 style="margin:0 0 8px;font-size:20px">Register / Book your seat</h3>
-        <p class="meta">Students are not allowed without parents. Please register to reserve your seat (free). Call <a href="tel:+919977066797">+91 99770 66797</a></p>
-        <div style="margin-top:10px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
-          <a class="btn btn-primary" href="#" onclick="alert('Replace with Google Form URL or endpoint to collect registrants');return false;">Open Registration Form</a>
-          <a class="btn btn-outline" href="mailto:info@geniuspoint.example?subject=Registration%20for%20Mid%20Brain%20Demo">Email Us</a>
-        </div>
+     <!-- REGISTER -->
+<div id="register" style="text-align:center;padding:18px">
+  <h3 style="margin:0 0 8px;font-size:20px">Register / Book your seat</h3>
+  <p class="meta">
+    Students are not allowed without parents. Please register to reserve your seat (free). 
+    Call <a href="tel:+919977066797">+91 99770 66797</a>
+  </p>
+
+  <div style="margin-top:10px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+
+    <!-- UPDATED BUTTON (opens modal popup) -->
+    <a class="btn btn-primary" href="#" onclick="openFormModal(); return false;">
+      Open Registration Form
+    </a>
+
+    <a class="btn btn-outline" href="mailto:info@geniuspoint.example?subject=Registration%20for%20Mid%20Brain%20Demo">
+      Email Us
+    </a>
+  </div>
+</div>
+
+<!-- MODAL POPUP -->
+<div id="formModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;align-items:center;justify-content:center;">
+  <div style="width:90%;max-width:900px;height:90%;background:#fff;border-radius:8px;overflow:hidden;position:relative;">
+    
+    <!-- Close Button -->
+    <button id="closeForm" style="position:absolute;top:10px;right:10px;z-index:2;padding:8px 12px;border:none;border-radius:6px;cursor:pointer;">
+      Close
+    </button>
+
+    <!-- GOOGLE FORM -->
+    <iframe id="formFrame"
+      src="https://docs.google.com/forms/d/11gp_U_KBZhlPyduuiS_J4gdEhgmkGD5rn2qcBUAJjP8/viewform?usp=pp_url"
+      style="width:100%;height:100%;border:0;">
+    </iframe>
+
+  </div>
+</div>
+
+<!-- MODAL SCRIPT -->
+<script>
+function openFormModal(){
+  const modal = document.getElementById('formModal');
+  modal.style.display = 'flex';            // show modal
+  document.body.style.overflow = 'hidden'; // disable background scroll
+}
+
+document.getElementById('closeForm').addEventListener('click', function(){
+  const modal = document.getElementById('formModal');
+  modal.style.display = 'none';            // hide modal
+  document.body.style.overflow = '';       // enable scroll
+});
+</script>
+
       </div>
 
     </main>
@@ -237,4 +283,5 @@
   </script>
 </body>
 </html>
+
 
